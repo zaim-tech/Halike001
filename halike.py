@@ -26,25 +26,24 @@ if st.button('Verifry Button'):
 
 st.write('Talented Videographer, Female drone pilot, photography & content creator. For all your events coverage.')
 
-if st.button('**Click to make order or chat with halike**'):
-     webbrowser.open(f'https://wa.me/{phne}')
+st.link_button('**Click to make order or chat with halike**', f'https://wa.me/{phne}')
+     
 msg = st.text_input('**Your message or order to Halike:**', placeholder='Your message or order')
-if st.button('**Submit**'):
+
         
-        message = f'Name: {name}, phone number: {phone}, my massage to Halike: {msg}'
-        
-        webbrowser.open(f'https://wa.me/{phne}?text={message}')
+message = f'Name: {name}, phone number: {phone}, my massage to Halike: {msg}'
+st.link_button('**Submit**', f'https://wa.me/{phne}?text={message}') 
+
 st.write('**Also reach as on:**')
 col1, col2, col3 = st.columns([1,2,3])
 
 with col1:
-    if st.button('Youtube'):
-        webbrowser.open('https://www.youtube.com/channel/UCnoegWJEEDp445IjeZT4fPg')
+     st.link_button('Youtube', 'https://www.youtube.com/channel/UCnoegWJEEDp445IjeZT4fPg')
+        
 
 with col2:
-    if st.button('Facebook'):
-        webbrowser.open('https://www.facebook.com/p/Halike-Production-100057331515391/')
+     st.link_button('Facebook', 'https://www.facebook.com/p/Halike-Production-100057331515391/')
+        
 
 with col3:
-    if st.button('Instagram'):
-        webbrowser.open('https://www.instagram.com/reel/Cl_AreYDhJW/')
+    st.link_button('Instagram', 'https://www.instagram.com/reel/Cl_AreYDhJW/')
