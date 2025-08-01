@@ -1,56 +1,50 @@
 import streamlit as st
-import time
+import time 
 import webbrowser
 
-st.set_page_config(page_title="Halike Production", layout="centered")
 
-# Initialize session state
-if 'page' not in st.session_state:
-    st.session_state.page = 'Home'
+st.spinner('In progress')
+time.sleep(3)
+phne = '254700047229'
 
-# Sidebar Navigation
-st.sidebar.title('Navigation')
-if st.sidebar.button('Order and messaging page'):
-    st.session_state.page = 'OrderPage'
 
-# Handle page switching
-if st.session_state.page == 'OrderPage':
-    import halike2  # This must be another file: halike2.py
-else:
-    # Main Home Page
-    st.title('Halike Production')
-    st.header('Welcome to Halike Production')
-    st.image('halike.jpg', width=250, caption='halike production')
+file = 'halike2.py'
+st.title('Halike Production')
 
-    name = st.text_input('**Enter your full name:**', placeholder='Enter full name')
-    phone_no = st.text_input('**Enter your phone number:**', max_chars=10, placeholder='e.g. 0712345678')
+     
+st.header('**Welcome to Halike production**')
+st.image('halike.jpg',width=250, caption='halike production')
 
-    def zaim():
-        with st.spinner('Wait to verify...'):
-            time.sleep(2)
-        st.success('Successfully verified.')
-        st.write(f'**Hello, {name}, welcome to Halike Production!**')
+name = st.text_input('**Enter your full name:**', placeholder='Enter full name', width=250)
+phone = st.text_input('**Enter your phone number:**', placeholder="e.g. 0712345678", width=250, max_chars=10)
+if not name and  not phone:
+     st.error('**Enter your name and phone number please**')
+if st.button('Verifry Button'):
+    st.spinner()
+    time.sleep(3)
+    st.success('Successfully verifry')
 
-    st.button('Verify Button', on_click=zaim)
+st.write('Talented Videographer, Female drone pilot, photography & content creator. For all your events coverage.')
 
-    def yt():
-        webbrowser.open('https://youtube.com/@halikeproduction4322?si=xi2fs90mFgGxLsbO')
+if st.button('**Click to make order or chat with halike**'):
+     webbrowser.open(f'https://wa.me/{phne}')
+msg = st.text_input('**Your message or order to Halike:**', placeholder='Your message or order')
+if st.button('**Submit**'):
+        
+        message = f'Name: {name}, phone number: {phone}, my massage to Halike: {msg}'
+        
+        webbrowser.open(f'https://wa.me/{phne}?text={message}')
+st.write('**Also reach as on:**')
+col1, col2, col3 = st.columns([1,2,3])
 
-    def ig():
-        webbrowser.open('https://www.instagram.com/halike_production/')
+with col1:
+    if st.button('Youtube'):
+        webbrowser.open('https://www.youtube.com/channel/UCnoegWJEEDp445IjeZT4fPg')
 
-    def fc():
-        webbrowser.open('https://www.facebook.com/people/Halike-Production/100057331515391/?sk=about')
+with col2:
+    if st.button('Facebook'):
+        webbrowser.open('https://www.facebook.com/p/Halike-Production-100057331515391/')
 
-    st.write('*Talented Videographer, Female drone pilot, photography & content creator. ' \
-             'For all your events coverage.*')
-
-    col1, col2 = st.columns([1, 2])
-
-    st.button('**Visit us on YouTube**', on_click=yt)
-
-    with col1:
-        st.button('**Instagram**', on_click=ig)
-
-    with col2:
-        st.button('**Facebook**', on_click=fc)
+with col3:
+    if st.button('Instagram'):
+        webbrowser.open('https://www.instagram.com/reel/Cl_AreYDhJW/')
