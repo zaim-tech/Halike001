@@ -24,7 +24,7 @@ if st.button('Verifry Button'):
     time.sleep(3)
     st.success('Successfully verifry')
 
-st.write('Talented Videographer, Female drone pilot, photography & content creator. For all your events coverage.')
+st.write('Halike Production for video cinematography and photography. Talented Videographer, Female drone pilot, photography & content creator. For all your events coverage.')
 
 st.link_button('**Click to make order or chat with halike**', f'https://wa.me/{phne}')
      
