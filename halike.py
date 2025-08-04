@@ -30,7 +30,7 @@ st.link_button('**Click to make order or chat with halike**', f'https://wa.me/{p
      
 msg = st.text_input('**Your message or order to Halike:**', placeholder='Your message or order')
 
-        
+st.checkbox('confirm')        
 message = f'Name: {name}, phone number: {phone}, my massage to Halike: {msg}'
 st.link_button('**Submit**', f'https://wa.me/{phne}?text={message}') 
 
@@ -47,3 +47,4 @@ with col2:
 
 with col3:
     st.link_button('Instagram', 'https://www.instagram.com/reel/Cl_AreYDhJW/')
+
